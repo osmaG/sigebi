@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>        
+        <title>SIGEBI. Inicio de Sesion</title>
+        <style type="text/css">
+        .ui-widget,.ui-widget .ui-widget{
+        font-size: 125% !important;
+        }
+        </style>
+    </h:head>
+    <h:body>
+        <p:growl id="growl" sticky="true" showDetail="true" />
+        <h:form>
+            <div class="contenedor">
+                <div class="centrado"> 
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">INICIO DE SESION</f:facet>
+                        <h:outputText value="Cuenta de Usuario:"/>
+                        <p:inputText id="usuario" tabindex="1" required="true" 
+                                     requiredMessage="No debe dejar en blanco el nombre de usuario" />
+                        <h:outputText value="Palabra Clave:" />
+                        <p:password  />
+                        <f:facet name="footer">
+                            <h:panelGroup style="display: block; text-align: center">
+                                <p:commandButton value="Conectar" />           
+                                <p:commandButton value="Limpiar" type="reset" />
+                            </h:panelGroup>                                    
+                        </f:facet>
+                    </p:panelGrid>
+                </div>
+            </div>
+        </h:form>            
+    </h:body>
+</html>
