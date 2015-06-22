@@ -19,20 +19,21 @@
         <h:form>
             <div class="contenedor">
                 <div class="centrado"> 
-                    <p:panelGrid columns="2">
-                        <f:facet name="header">INICIO DE SESION</f:facet>
-                        <h:outputText value="Cuenta de Usuario:"/>
-                        <p:inputText id="usuario" tabindex="1" required="true" 
-                                     requiredMessage="No debe dejar en blanco el nombre de usuario" />
-                        <h:outputText value="Palabra Clave:" />
-                        <p:password  />
+                <p:panel styleClass="session" header="INICIO DE SESION">
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="Cuenta de Usuario:"/>
+                        <p:inputText id="usuario" tabindex="1" value="#{login.usuario}" required="true" 
+                                     requiredMessage="Nombre de usuario en blanco" />
+                        <h:outputLabel value="Palabra Clave:" />
+                        <p:password id="clave" value="#{login.clave}" required="true" requiredMessage="Clave en Blanco" />
                         <f:facet name="footer">
                             <h:panelGroup style="display: block; text-align: center">
-                                <p:commandButton value="Conectar" />           
-                                <p:commandButton value="Limpiar" type="reset" />
+                                <h:commandButton value="Conectar" action="#{login.loginControl()}"/>           
+                                <h:commandButton value="Limpiar" type="reset" />
                             </h:panelGroup>                                    
                         </f:facet>
-                    </p:panelGrid>
+                    </h:panelGrid>
+                </p:panel>                    
                 </div>
             </div>
         </h:form>            

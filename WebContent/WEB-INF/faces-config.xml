@@ -10,5 +10,13 @@
 			<default-locale>en</default-locale>
 		</locale-config>
 	</application>
-
+    <navigation-rule>
+        <description>Cerrar Sesion</description>
+        <from-view-id>/escritorio.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{salir.salir}</from-action>
+            <from-outcome>salir</from-outcome>
+            <to-view-id>/inicio.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>           
 </faces-config>
