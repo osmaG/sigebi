@@ -5,8 +5,8 @@
 		<properties>
 		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/sigebi"></property>
 		<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"></property>		
-		<property name="javax.persistence.jdbc.user" value="htamayobd"></property>
-		<property name="javax.persistence.jdbc.password" value="db43uskAdY11"></property>		
+		<property name="javax.persistence.jdbc.user" value="sigebidba"></property>
+		<property name="javax.persistence.jdbc.password" value="Ucad123"></property>		
 				
 		</properties>
 	</persistence-unit>
