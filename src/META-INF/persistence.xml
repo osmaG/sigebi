@@ -3,8 +3,8 @@
 	<persistence-unit name="sigebiPU" transaction-type="JTA">
     <jta-data-source>jdbc/sigebi</jta-data-source>	
 		<class>sv.com.htamayo.entities.Usuario</class>
-		<class>sv.com.htamayo.entities.Catbibliografia</class>
 		<class>sv.com.htamayo.entities.Editorial</class>
+		<class>sv.com.htamayo.entities.Autores</class>
 <!--  		
 		<properties>
 		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/sigebi"></property>

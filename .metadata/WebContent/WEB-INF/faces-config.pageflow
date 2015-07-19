@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14349464563240" configfile="/sigebi/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="escritorio.xhtml" comment="Cerrar Sesion" id="pf14349470375601" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14349470375662" path="/escritorio.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="inicio.xhtml" id="pf14349470375663" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14349470375662" path="/inicio.xhtml"/>
+  <links id="pf14349470375662" target="pf14349470375663" source="pf14349470375601" outcome="salir" fromaction="#{salir.salir}"/>
+</pageflow:Pageflow>

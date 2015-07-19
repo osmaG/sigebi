@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>SIGEBI, Escritorio</title>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                    
+    </h:head>
+    <h:body>
+            <h:form style="formulario">            
+            <h:graphicImage value="images/usuario.png" alt="Cuenta de Usuario" width="30" height="30" title="Cuenta de Usuario"/>
+            <h:outputLabel value="#{Usuario.getCueusu}" />&nbsp;
+            <h:graphicImage value="images/rol.png" alt="Rol Activo" title="Rol Activo" width="30" height="30"/>
+            <h:outputLabel value="#{Usuario.getNivusu}" />&nbsp;            
+            <h:outputLink value="nueclave.xhtml" title="Actualizar Clave">
+                <h:graphicImage value="images/chpword.jpg" alt="Cambiar Clave" title="Cambiar Clave" width="30" height="30"/>
+            </h:outputLink>&nbsp;
+            <h:commandLink type="submit" action="#{salir.salir}" title="Cerrar Sesion">
+                <h:graphicImage value="images/cerrar.jpg" alt="Cerrar" title="Cerrar" width="30" height="30"/>
+            </h:commandLink>            
+            <div class="contenedor">
+                <div class="centrado">            
+            <h:panelGrid styleClass="tablas" columns="2">
+                <h:outputLink value="mnucatalogos.xhtml">
+                <h:graphicImage value="images/catalogos.png" alt="catalogos" title="Catalogos" width="256" height="256" />
+                </h:outputLink>
+                <h:outputLink value="mnuadministracion.xhtml">                
+                <h:graphicImage value="images/gestion.png" alt="Administracion" title="Administracion" width="256" height="256" />
+                </h:outputLink>                
+                <h:outputLabel value="Catalogos"/>
+                <h:outputLabel styleClass="tituloOpciones" value="Administracion"/>                                
+                <h:outputLink value="indicadores.xhtml">                                
+                <h:graphicImage value="images/estadisticas.png" alt="Indicadores" title="Indicadores" width="256" height="256" />                
+                </h:outputLink>               
+                <h:outputLink value="utilerias.xhtml">                                
+                <h:graphicImage value="images/utilerias.png" alt="utilerias" title="Utilerias" width="256" height="256" />                
+                </h:outputLink>                               
+                <h:outputLabel styleClass="tituloOpciones" value="Indicadores" />
+                <h:outputLabel styleClass="tituloOpciones" value="Utilerias" />                
+            </h:panelGrid>
+                </div>
+            </div>
+            </h:form>            
+    </h:body>
+</html>

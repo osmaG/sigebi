@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                        
+        <title>SIGEBI - Formulario de Creacion de Editoriales</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form style="formulario">
+            <div class="contenedor">
+                <div class="centrado">                             
+                    <p:panelGrid columns="2">
+                    <f:facet name="header">Formulario para Creacion de Editoriales</f:facet>                        
+                        <h:outputLabel value="Nombre:" for="nomedi" />
+                        <p:inputText id="nomedi" value="#{editorialcontroller.e.nomedi}" style="text-transform: uppercase" title="Nombre Editorial" required="true" requiredMessage="Nombre de Editorial"/>
+                        <h:outputLabel value="Pais:" for="paiedi" />
+                        <p:inputText id="paiedi" value="#{editorialcontroller.e.paiedi}" style="text-transform: uppercase" title="Pais de Origen" required="true" requiredMessage="Pais de Origen"/>
+                        <h:outputLabel value="Ciudad:" for="ciuedi" />
+                        <p:inputText id="ciuedi" value="#{editorialcontroller.e.ciuedi}" style="text-transform: uppercase" title="Ciudad de Domicilio" required="false" requiredMessage="Ciudad de Domicilio"/>                        
+                        <f:facet name="footer">
+                            <h:panelGroup style="display: block; text-align: center">                        
+                                <p:commandButton value="Guardar" action="#{editorialcontroller.add()}"></p:commandButton>
+                                <p:commandButton value="Cancelar" action="#{editorialcontroller.cancel()}" immediate="true"></p:commandButton>                                
+                            </h:panelGroup>                                    
+                        </f:facet>                        
+                    </p:panelGrid>
+                </div>
+            </div>                       
+            </h:form>
+        </f:view>
+    </h:body>
+</html>

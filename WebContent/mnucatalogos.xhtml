@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>SIGEBI, Menu de Catalogos</title>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                    
+    </h:head>
+    <h:body>
+            <h:form style="formulario">            
+            <h:graphicImage value="images/usuario.png" alt="Cuenta de Usuario" width="30" height="30" title="Cuenta de Usuario"/>
+            <h:outputLabel value="#{Usuario.getCueusu}" />&nbsp;
+            <h:graphicImage value="images/rol.png" alt="Rol Activo" title="Rol Activo" width="30" height="30"/>
+            <h:outputLabel value="#{Usuario.getNivusu}" />&nbsp;  
+            <h:outputLink value="escritorio.xhtml" title="Ir al Escritorio">
+                <h:graphicImage value="images/desk.png" alt="Escritorio" title="Escritorio" width="30" height="30"/>
+            </h:outputLink>&nbsp;                                
+            <div class="contenedor">
+                <div class="centrado">            
+            <h:panelGrid styleClass="tablas" columns="3">
+                <h:outputLink value="vereditoriales.xhtml">
+                <h:graphicImage value="images/editorial.png" alt="Editoriales" title="Editoriales" width="200" height="150" />
+                </h:outputLink>
+                <h:outputLink value="verautores.xhtml">                
+                <h:graphicImage value="images/autor.png" alt="Autores" title="Autores" width="200" height="120" />
+                </h:outputLink>                
+                <h:outputLink value="vercatbibliografia.xhtml">                
+                <h:graphicImage value="images/categorias.png" alt="Categorias" title="Categorias" width="180" height="160" />
+                </h:outputLink>                                
+                
+                <h:outputLabel styleClass="tituloOpciones" value="Editoriales"/>
+                <h:outputLabel styleClass="tituloOpciones" value="Autores"/>                                
+                <h:outputLabel styleClass="tituloOpciones" value="Categ. Bibliografia"/>                                                
+                <h:outputLink value="verbibliografia.xhtml">                                
+                <h:graphicImage value="images/libros.png" alt="Bibliografia" title="Bibliografia" width="200" height="200" />                
+                </h:outputLink>               
+                <h:outputLink value="verclientes.xhtml">                                
+                <h:graphicImage value="images/clientes.png" alt="Clientes" title="Clientes" width="200" height="189" />                
+                </h:outputLink>                               
+                <h:outputLink value="verusuarios.xhtml">                                
+                <h:graphicImage value="images/usuarios.png" alt="Usuarios" title="Usuarios" width="200" height="219" />                
+                </h:outputLink>                                               
+                <h:outputLabel styleClass="tituloOpciones" value="Bibliografia" />
+                <h:outputLabel styleClass="tituloOpciones" value="Clientes" />                
+                <h:outputLabel styleClass="tituloOpciones" value="Usuarios" />                                
+            </h:panelGrid>
+                </div>
+            </div>
+            </h:form>            
+    </h:body>
+</html>
