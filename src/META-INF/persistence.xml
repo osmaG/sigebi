@@ -5,6 +5,7 @@
 		<class>sv.com.htamayo.entities.Usuario</class>
 		<class>sv.com.htamayo.entities.Editorial</class>
 		<class>sv.com.htamayo.entities.Autores</class>
+		<class>sv.com.htamayo.entities.Bibliografia</class>
 <!--  		
 		<properties>
 		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/sigebi"></property>
