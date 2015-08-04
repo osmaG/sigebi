@@ -8,10 +8,8 @@
     </h:head>
     <h:body>
             <h:form style="formulario">            
-            <h:graphicImage value="images/usuario.png" alt="Cuenta de Usuario" width="30" height="30" title="Cuenta de Usuario"/>
-            <h:outputLabel value="#{Usuario.getCueusu}" />&nbsp;
-            <h:graphicImage value="images/rol.png" alt="Rol Activo" title="Rol Activo" width="30" height="30"/>
-            <h:outputLabel value="#{Usuario.getNivusu}" />&nbsp;            
+            <h:graphicImage value="images/usuario.png" alt="Cuenta de Usuario" width="30" height="30" title="#{login.getUsuario()}"/>&nbsp;
+            <h:graphicImage value="images/rol.png" alt="Rol Activo" title="#{login.getNivel()}" width="30" height="30"/>&nbsp;            
             <h:outputLink value="nueclave.xhtml" title="Actualizar Clave">
                 <h:graphicImage value="images/chpword.jpg" alt="Cambiar Clave" title="Cambiar Clave" width="30" height="30"/>
             </h:outputLink>&nbsp;

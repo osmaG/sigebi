@@ -14,16 +14,21 @@ public class LoginQuery {
 		//em.getTransaction().begin(); //reservado solo para PU RESOURCE_LOCAL
 	}//fin de LoginQuery
 	
-	public boolean loginControl(String usuario, String clave){
+	public int loginControl(String usuario, String clave){
+		int xnivel = 0;
 		try{
 			Usuario u = em.createNamedQuery("Usuario.validlogin", Usuario.class).setParameter("usuario", usuario).setParameter("clave", clave).getSingleResult();
 			if(u != null){
-				return true;
+				xnivel = u.getNivusu();
+				return xnivel;
 			}
-			return false;
+			else{
+				return 0;
+			}
 		}
 		catch(Exception e){
-			return false;
+			e.printStackTrace();
+			return 0;
 		}
 	}//fin de loginControl
 }//fin de loginQuery
