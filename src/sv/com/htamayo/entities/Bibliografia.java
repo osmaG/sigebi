@@ -1,7 +1,8 @@
 package sv.com.htamayo.entities;
 
 import java.io.Serializable;
-
+import javax.persistence.*;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,13 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-
-import java.util.Date;
 
 
 /**
@@ -30,7 +27,7 @@ public class Bibliografia implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private Integer codbib;
+	//private Integer codbib;
 
 	private Integer codaut;
 
@@ -52,13 +49,11 @@ public class Bibliografia implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date fpubib;
 
-	private String idicbib;
+	private String idibib;
 
 	private String isbbib;
 
 	private String metabib;
-
-	private String nacbib;
 
 	private String nejbib;
 
@@ -67,8 +62,6 @@ public class Bibliografia implements Serializable {
 	private String nvobib;
 
 	private Integer pagbib;
-
-	private String pasbib;
 
 	private float prebib;
 
@@ -86,7 +79,7 @@ public class Bibliografia implements Serializable {
 
 	public Bibliografia() {
 	}
-
+/*
 	public Integer getCodbib() {
 		return this.codbib;
 	}
@@ -94,7 +87,7 @@ public class Bibliografia implements Serializable {
 	public void setCodbib(Integer codbib) {
 		this.codbib = codbib;
 	}
-
+*/
 	public Integer getCodaut() {
 		return this.codaut;
 	}
@@ -167,12 +160,12 @@ public class Bibliografia implements Serializable {
 		this.fpubib = fpubib;
 	}
 
-	public String getIdicbib() {
-		return this.idicbib;
+	public String getIdibib() {
+		return this.idibib;
 	}
 
-	public void setIdicbib(String idicbib) {
-		this.idicbib = idicbib;
+	public void setIdibib(String idibib) {
+		this.idibib = idibib;
 	}
 
 	public String getIsbbib() {
@@ -189,14 +182,6 @@ public class Bibliografia implements Serializable {
 
 	public void setMetabib(String metabib) {
 		this.metabib = metabib;
-	}
-
-	public String getNacbib() {
-		return this.nacbib;
-	}
-
-	public void setNacbib(String nacbib) {
-		this.nacbib = nacbib;
 	}
 
 	public String getNejbib() {
@@ -229,14 +214,6 @@ public class Bibliografia implements Serializable {
 
 	public void setPagbib(Integer pagbib) {
 		this.pagbib = pagbib;
-	}
-
-	public String getPasbib() {
-		return this.pasbib;
-	}
-
-	public void setPasbib(String pasbib) {
-		this.pasbib = pasbib;
 	}
 
 	public float getPrebib() {

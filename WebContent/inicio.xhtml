@@ -12,14 +12,22 @@
         .ui-widget,.ui-widget .ui-widget{
         font-size: 125% !important;
         }
+        
+        .wrapper{
+        position: absolute;
+        top: 30%;
+        bottom: 25%;
+        left: 30%;
+        right: 25%;
+        }
         </style>
         
     </h:head>
-    <h:body>
+    <h:body style="background-image: url(images/fondo01.png)">
         <p:growl id="growl" sticky="true" showDetail="true" />
         <h:form>
-            <div class="contenedor">
-                <div class="centrado"> 
+            <!--  <div class="contenedor"> -->
+                <div class="wrapper"> 
                 <p:panel id="panel" styleClass="session" header="INICIO DE SESION">
                 <p:focus for="usuario" />
                     <h:panelGrid columns="2">
@@ -37,7 +45,7 @@
                     </h:panelGrid>
                 </p:panel>                    
                 </div>
-            </div>
+          <!--   </div> --> 
         </h:form>            
     </h:body>
 </html>

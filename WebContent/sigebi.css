@@ -8,6 +8,7 @@
         font-size: 125% !important;
         }
 
+
 /* inicio de tags para las solapas horizontales */
 #header{
 	float:left;
@@ -48,15 +49,15 @@
 
 //div para centrar horizontalmente las tablas y otros objetos usados en formularios
 .contenedor{
-    position: relative;
-    width: 100%;
+   position: relative; 
+   width: 100%; 
 }
 
 .centrado{
-    position: absolute;
-    left: 400px;
-    //width: 300px;
-    background-color: #b0e0e6;
+	
+    position: absolute; 
+    left: 400px; 
+    background-color: #b0e0e6; 
 }
 
 //formateo de dataTables utilizadas en formularios de captura de datos

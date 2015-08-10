@@ -19,7 +19,7 @@
             <h:outputLink value="mnucatalogos.xhtml">
                 <h:graphicImage value="images/subnivel.png" alt="Subir Un Nivel" title="Subir Un Nivel" width="30" height="30" />
             </h:outputLink>&nbsp;&nbsp;
-            <h:outputLink value="addeditorial.xhtml">                                
+            <h:outputLink value="addbibliografia.xhtml">                                
              <h:graphicImage value="images/agregar.png" alt="Agregar Nuevo Registro" title="Agregar Nuevo Registro" width="30" height="30" />                
             </h:outputLink>                                           
             <p:dataTable var="data" value="#{bibliografiacontroller.findAll()}" tableStyle="width:auto" resizableColumns="true" emptyMessage="El origen de datos esta en blanco. No hay datos que mostrar" 
@@ -36,7 +36,13 @@
                     </h:commandLink>&nbsp;                                                                                                   
                     <h:commandLink action="#{bibliografiacontroller.delete(data)}" onclick="return confirm('Se dispone a eliminar un registro, Esta seguro?')">                                
                         <h:graphicImage value="images/borrar.png" alt="Borrar Registro" title="Borrar Registro" width="30" height="30" />                
-                    </h:commandLink>                                                               
+                    </h:commandLink>&nbsp;                                                               
+                    <h:commandLink action="#{bibliografiacontroller.editinfo(data)}" >                                
+                        <h:graphicImage value="images/info.png" alt="Agregar Info Complementaria" title="Agregar Info Complementaria" width="30" height="30" />                
+                    </h:commandLink>&nbsp;                                                                                                                       
+                    <h:commandLink action="#{bibliografiacontroller.editmeta(data)}" >                                
+                        <h:graphicImage value="images/meta.png" alt="Agregar Metadata" title="Agregar Metadata" width="30" height="30" />                
+                    </h:commandLink>                                                                                                                                           
                 </p:column>                                    
             </p:dataTable>
                 </div>
