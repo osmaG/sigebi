@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">    
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                
+        <title>Catalogo de Bitacora</title>
+    </h:head>
+    <h:body>
+        <h:form style="formulario">
+            <div class="contenedor">
+                <div class="centrado">                         
+            <h:outputLink value="escritorio.xhtml">
+                <h:graphicImage value="images/home2.png" alt="Escritorio" title="Escritorio" width="30" height="30" />
+            </h:outputLink>&nbsp;&nbsp;
+            <h:outputLink value="menuadmon.xhtml">
+                <h:graphicImage value="images/return.png" alt="Subir Un Nivel" title="Subir Un Nivel" width="30" height="30" />
+            </h:outputLink>&nbsp;&nbsp;
+            <h:outputLink value="addbitacora.xhtml">                                
+             <h:graphicImage value="images/add.png" alt="Agregar Nuevo Registro" title="Agregar Nuevo Registro" width="30" height="30" />                
+            </h:outputLink>                                           
+            <p:dataTable var="data" value="#{bitacoracontroller.findAll()}" tableStyle="width:auto" resizableColumns="true" emptyMessage="El origen de datos esta en blanco. No hay datos que mostrar" 
+                         paginator="true" rows="10" lazy="true" style="alignment-adjust: middle" >
+                <p:column headerText="Titulo login" style="text-align: center">
+                    <h:outputText value="#{data.titinc}"></h:outputText>
+                </p:column>
+                <p:column headerText="Descripcion login" style="text-align: center">
+                    <h:outputText value="#{data.desinc}"></h:outputText>
+                </p:column>
+                <p:column headerText="Fecha  login" style="text-align: center">
+                    <h:outputText value="#{data.fecinc}">
+                     <f:convertDateTime pattern="MM-dd-yyyy" />
+                     </h:outputText>
+                </p:column>                      
+                <p:column headerText="Opciones" style="text-align: center">
+                    <h:commandLink action="#{bitacoracontroller.edit(data)}" >                                
+                        <h:graphicImage value="images/edit.png" alt="Actualizar Informacion" title="Actualizar Informacion" width="30" height="30" />                
+                    </h:commandLink>&nbsp;                                                                                                   
+                    <h:commandLink action="#{bitacoracontroller.delete(data)}" onclick="return confirm('Se dispone a eliminar un registro, Esta seguro?')">                                
+                        <h:graphicImage value="images/delete.png" alt="Borrar Registro" title="Borrar Registro" width="30" height="30" />                
+                    </h:commandLink>                                                               
+                </p:column>                                    
+            </p:dataTable>
+                </div>
+            </div>
+        </h:form>            
+    </h:body>
+</html>

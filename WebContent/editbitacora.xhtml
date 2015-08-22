@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">   
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                            
+        <title>Actualizacion de Informacion de Bitacora</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form style="formulario">
+               <div class="contenedor">
+                 <div class="centrado">   
+                 <p:focus for="codinc">                          
+                    <p:panelGrid columns="2">
+                    <f:facet name="header">Actualizacion de Informacion de Bitacora</f:facet> 
+                    <h:outputLabel value="Codigo login:" for="codinc" />
+                    <p:inputText id="codinc" value="#{bitacoracontroller.e.codinc}" title="Codigo login" required="true" requiredMessage="Codigo login"/>
+                    <h:outputLabel value="Desripcion login:" for="desinc" />
+                    <p:inputText id="desinc" value="#{bitacoracontroller.e.desinc}" title="Descripcion login" required="true" requiredMessage="Descripcion login"/>
+                    <h:outputLabel value="Fecha login:" for="fecinc" />
+                    <p:calendar id="fecinc" value="#{bitacoracontroller.e.fecinc}" showOn="button" pattern="dd-MM-yyyy" mask="true"/>                    
+                    <h:outputLabel value="Titulo loin:" for="titinc" />
+                    <p:inputText id="titinc" value="#{bitacoracontroller.e.titinc}" title="Titulo login" required="true" requiredMessage="Titulo login"/>
+                    <f:facet name="footer">
+                    <h:panelGroup style="display: block; text-align: center">   
+                    <p:commandButton value="Actualizar" action="#{bitacoracontroller.edit()}"></p:commandButton>                    
+                     <p:commandButton value="Cancelar" action="#{bitacoracontroller.cancel()}" immediate="true"></p:commandButton> 
+                     </h:panelGroup>                                    
+                        </f:facet>                        
+                    </p:panelGrid>
+                     </p:focus>
+                </div>
+            </div>                       
+            </h:form>
+        </f:view>
+    </h:body>
+</html>

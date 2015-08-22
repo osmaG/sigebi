@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">      
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                            
+        <title>Actualizacion de Informacion de Autores</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form style="formulario">
+            <div class="contenedor">
+                <div class="centrado">                             
+                    <p:focus for="apeaut" />                                                                                                                                   
+                    <p:panelGrid columns="2">
+                    <f:facet name="header">Formulario para Actualizacion de Autores</f:facet>                        
+                        <h:outputLabel value="Apellidos:" for="apeaut" />
+                        <p:inputText id="apeaut" value="#{autorescontroller.e.apeaut}" style="text-transform: uppercase" title="Apellidos" required="true" requiredMessage="Apellidos"/>                        
+                        <h:outputLabel value="Nombres:" for="nomaut" />
+                        <p:inputText id="nomaut" value="#{autorescontroller.e.nomaut}" style="text-transform: uppercase" title="Nombres" required="true" requiredMessage="Nombres"/>
+                        <h:outputLabel value="Correo Electronico:" for="maiaut" />
+                        <p:inputText id="maiaut" value="#{autorescontroller.e.maiaut}" style="text-transform: uppercase" title="Correo Electronico" required="false" requiredMessage="Correo Electronico"/>                        
+                        <h:outputLabel value="Pais Origen:" for="paiaut" />
+                        <p:inputText id="paiaut" value="#{autorescontroller.e.paiaut}" style="text-transform: uppercase" title="Pais de Origen" required="false" requiredMessage="Pais de Origen"/>                        
+                        <h:outputLabel value="Tipo Autor:" for="tipaut" />
+                        <p:inputText id="tipaut" value="#{autorescontroller.e.tipaut}" style="text-transform: uppercase" title="Clasificacion Autores" required="true" requiredMessage="Clasificacion Autores"/>                        
+                        <h:outputLabel value="Web del Autor:" for="webaut" />
+                        <p:inputText id="webaut" value="#{autorescontroller.e.webaut}" style="text-transform: uppercase" title="Sitio Web del Autor" required="false" requiredMessage="Sitio Web del Autor"/>                        
+                        <h:outputLabel value="Cuenta de Twitter:" for="twiaut" />
+                        <p:inputText id="twiaut" value="#{autorescontroller.e.twiaut}" style="text-transform: uppercase" title="Cuenta de Twitter" required="false" requiredMessage="Cuenta de Twitter"/>                        
+                        
+                        <f:facet name="footer">
+                            <h:panelGroup style="display: block; text-align: center">                        
+                                <p:commandButton value="Guardar" action="#{autorescontroller.edit()}"></p:commandButton>
+                                <p:commandButton value="Cancelar" action="#{autorescontroller.cancel()}" immediate="true"></p:commandButton>                                
+                            </h:panelGroup>                                    
+                        </f:facet>                        
+                    </p:panelGrid>
+                </div>
+            </div>                       
+            </h:form>
+        </f:view>
+    </h:body>        
+</html>

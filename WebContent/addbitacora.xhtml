@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                        
+        <title>SIGEBI - Formulario de Creacion de Bitacora</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form style="formulario">
+            <div class="contenedor">
+                <div class="centrado">   
+                <p:focus for="codinc">                          
+                    <p:panelGrid columns="2">
+                    <f:facet name="header">Formulario para Creacion de Bitacora</f:facet>                        
+                        <h:outputLabel value="Codigo login:" for="codinc" />
+                        <p:inputText id="codinc" value="#{bitacoracontroller.e.codinc}" style="text-transform: uppercase" title="Nombre Editorial" required="true" requiredMessage="Nombre de Editorial"/>
+                        <h:outputLabel value="Descripcion login:" for="desinc" />
+                        <p:inputText id="desinc" value="#{bitacoracontroller.e.desinc}" style="text-transform: uppercase" title="Descripcion del inicio de sesion" required="true" requiredMessage="Descripcion del inicio de sesion"/>
+                        <h:outputLabel value="Fecha login:" for="fecinc" />
+                        <p:calendar id="fecinc" value="#{bitacoracontroller.e.fecinc}" showOn="button"/>                        
+                        <h:outputLabel value="Titulo login:" for="titinc" />
+                        <p:inputText id="titinc" value="#{bitacoracontroller.e.titinc}" style="text-transform: uppercase" title="Titulo de inicio de sesion" required="true" requiredMessage="Titulo de inicio de sesion"/>
+                        <f:facet name="footer">
+                            <h:panelGroup style="display: block; text-align: center">                        
+                                <p:commandButton value="Guardar" action="#{bitacoracontroller.add()}"></p:commandButton>
+                                <p:commandButton value="Cancelar" action="#{bitacoracontroller.cancel()}" immediate="true"></p:commandButton>                                
+                            </h:panelGroup>                                    
+                        </f:facet>                        
+                    </p:panelGrid>
+                    </p:focus>
+                </div>
+            </div>                       
+            </h:form>
+        </f:view>
+    </h:body>
+</html>

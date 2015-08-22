@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                        
+        <title>SIGEBI - Formulario de Creacion de Usuarios</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form style="formulario">
+            <div class="contenedor">
+                <div class="centrado">  
+                <p:focus for="codusu"/>                         
+                    <p:panelGrid columns="2">
+                    <f:facet name="header">Formulario para Creacion de Usuarios</f:facet>                      
+                        <h:outputLabel value="Codigo:" for="codusu" />
+                        <p:inputText id="codusu" value="#{usuariocontroller.e.codusu}" style="text-transform: uppercase" title="Codigo Usuario" required="true" requiredMessage="Codigo Usuario"/>
+                        <h:outputLabel value="Nombre:" for="nomusu" />
+                        <p:inputText id="nomusu" value="#{usuariocontroller.e.nomusu}" style="text-transform: uppercase" title="Nombre Usuario" required="true" requiredMessage="Nombre Usuario"/>
+                        <h:outputLabel value="Apellido:" for="apeusu" />
+                        <p:inputText id="apeusu" value="#{usuariocontroller.e.apeusu}" style="text-transform: uppercase" title="Apellido Usuario" required="true" requiredMessage="Apellido Usuario"/>
+                        <h:outputLabel value="Clave:" for="clausu" />
+                        <p:inputText id="clausu" value="#{usuariocontroller.e.clausu}" style="text-transform: uppercase" title="Clave Usuario" required="false" requiredMessage="Clave Usuario"/>                        
+                        <h:outputLabel value="Cuenta:" for="cueusu" />
+                        <p:inputText id="cueusu" value="#{usuariocontroller.e.cueusu}" style="text-transform: uppercase" title="Cuenta Usuario" required="false" requiredMessage="Cuenta Usuario"/>
+                        <h:outputLabel value="Nivel:" for="nivusu" />
+                        <p:inputText id="nivusu" value="#{usuariocontroller.e.nivusu}" style="text-transform: uppercase" title="Nivel Usuario" required="false" requiredMessage="Nivel Usuario"/>                                                
+                        <f:facet name="footer">
+                            <h:panelGroup style="display: block; text-align: center">                        
+                                <p:commandButton value="Guardar" action="#{usuariocontroller.add()}"></p:commandButton>
+                                <p:commandButton value="Cancelar" action="#{usuariocontroller.cancel()}" immediate="true"></p:commandButton>                                
+                            </h:panelGroup>                                    
+                        </f:facet>                        
+                    </p:panelGrid>
+                </div>
+            </div>                       
+            </h:form>
+        </f:view>
+    </h:body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                        
+        <title>SIGEBI - Formulario para Creacion Base de Conocimiento</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form style="formulario">
+            <div class="contenedor">
+                <div class="centrado"> 
+                     <p:focus for="codtem">                             
+                    <p:panelGrid columns="2">
+                    <f:facet name="header">Formulario para Creacion Base de Conocimiento</f:facet>        
+                    <h:outputLabel value="Codigo tema:" for="codtem" />
+                        <p:inputText id="codtem" value="#{baseconocontroller.e.codtem}" style="text-transform: uppercase" title="Codigo del tema" required="true" requiredMessage="Codigo del tema"/>                
+                        <h:outputLabel value="Codigo cliente:" for="codcli" />
+                        <p:inputText id="codcli" value="#{baseconocontroller.e.codcli}" style="text-transform: uppercase" title="Codigo del cliente" required="true" requiredMessage="Codigo del cliente"/>
+                        <h:outputLabel value="Codigo documento:" for="coddoc" />
+                        <p:inputText id="coddoc" value="#{baseconocontroller.e.coddoc}" style="text-transform: uppercase" title="Codigo del documento" required="true" requiredMessage="Codigo del documento"/>
+                        <h:outputLabel value="Descripcion tema:" for="destem" />
+                        <p:inputText id="destem" value="#{baseconocontroller.e.destem}" style="text-transform: uppercase" title="Descripcion del tema" required="false" requiredMessage="Descripcion del tema"/>
+                        <h:outputLabel value="Fecha publicacion:" for="fputem" />
+                        <p:calendar id="fputem" value="#{baseconocontroller.e.fputem}" showOn="button"/>
+                        <h:outputLabel value="Documentalista de la base:" for="metatem" />
+                        <p:inputText id="metatem" value="#{baseconocontroller.e.metatem}" style="text-transform: uppercase" title="Documentalista de la base" required="false" requiredMessage="Documentalista de la base"/>
+                        <h:outputLabel value="Titulo tema:" for="tittem" />
+                        <p:inputText id="tittem" value="#{baseconocontroller.e.tittem}" style="text-transform: uppercase" title="Titulo del tema" required="false" requiredMessage="Titulo del tema"/>                        
+                        <f:facet name="footer">
+                            <h:panelGroup style="display: block; text-align: center">                        
+                                <p:commandButton value="Guardar" action="#{baseconocontroller.add()}"></p:commandButton>
+                                <p:commandButton value="Cancelar" action="#{baseconocontroller.cancel()}" immediate="true"></p:commandButton>                                
+                            </h:panelGroup>                                    
+                        </f:facet>                        
+                    </p:panelGrid>
+                    </p:focus>
+                </div>
+            </div>                       
+            </h:form>
+        </f:view>
+    </h:body>
+</html>

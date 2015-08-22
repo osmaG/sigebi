@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                        
+        <title>SIGEBI - Formulario de Expediente General de Bibliografia</title>
+    </h:head>
+    <h:body>
+        <p:growl id="growl" sticky="true" showDetail="true" autoUpdate="true" />    
+        <f:view>
+            <h:form style="formulario">
+            <div class="contenedor">
+                <div class="centrado">       
+                    <p:focus for="ubibib" />                                                                             
+                    <p:panelGrid columns="2">
+                    <f:facet name="header">Expediente General de Bibliografia</f:facet>                        
+                        <h:outputLabel value="Ubicacion:" for="ubibib" />
+                        <p:inputText id="ubibib" value="#{bibliografiacontroller.e.ubibib}" style="text-transform: uppercase" title="Ubicacion" required="true" requiredMessage="Ubicacion"/>
+                        <h:outputLabel value="ISBN:" for="isbbib" />
+                        <p:inputText id="isbbib" value="#{bibliografiacontroller.e.isbbib}" style="text-transform: uppercase" title="ISBN" required="false" requiredMessage="ISBN"/>                                                                        
+                        <h:outputLabel value="Categoria:" for="codcbi" />
+                        <p:selectOneMenu id="codcbi" value="#" style="width:260px" title="Categoria" required="true" requiredMessage="Categoria">
+                        <f:selectItem itemLabel="Seleccione un valor" itemValue="#{null}" />
+                        <f:selectItems value="#" />
+                        </p:selectOneMenu>
+                        <h:outputLabel value="Editorial:" for="codedi" />
+                        <p:selectOneMenu id="codebi" value="#" style="width:260px" title="Editorial" required="true" requiredMessage="Editorial">
+                        <f:selectItem itemLabel="Seleccione un valor" itemValue="#{null}" />
+                        <f:selectItems value="#" />
+                        </p:selectOneMenu>                        
+                        <h:outputLabel value="Autor:" for="codaut" />
+                        <p:selectOneMenu id="codaut" value="#" style="width:260px" title="Autor" required="true" requiredMessage="Autor" >
+                        <f:selectItem itemLabel="Seleccione un valor" itemValue="#{null}" />
+                        <f:selectItems value="#" />                        
+                        </p:selectOneMenu>                        
+                        <h:outputLabel value="Titulo:" for="titbib" />
+                        <p:inputText id="titbib" value="#{bibliografiacontroller.e.titbib}" style="text-transform: uppercase" title="Titulo" required="true" requiredMessage="Titulo"/>                                                
+                        <h:outputLabel value="Num Paginas:" for="pagbib" />
+                        <p:inputText id="pagbib" value="#{bibliografiacontroller.e.pagbib}" style="text-transform: uppercase" title="Num Pags" required="true" requiredMessage="Num Pags"/>                        
+                        <h:outputLabel value="Num Volumen:" for="nvobib" />
+                        <p:inputText id="nvobib" value="#{bibliografiacontroller.e.nvobib}" style="text-transform: uppercase" title="Num Vol" required="true" requiredMessage="Num Vol"/>                        
+                        <h:outputLabel value="Edicion:" for="edibib" />
+                        <p:inputText id="edibib" value="#{bibliografiacontroller.e.edibib}" style="text-transform: uppercase" title="Edicion" required="true" requiredMessage="Edicion"/>                        
+                        <h:outputLabel value="Fecha Registro:" for="fenbib" />
+                        <p:inputText id="fenbib" value="#{bibliografiacontroller.e.fenbib}" style="text-transform: uppercase" title="Fecha Registro Entrada" required="true" requiredMessage="Fecha Registro Entrada"/>                        
+                         
+                        <f:facet name="footer">
+                            <h:panelGroup style="display: block; text-align: center">                        
+                                <p:commandButton value="Guardar" action="#{bibliografiacontroller.add()}"></p:commandButton>
+                                <p:commandButton value="Cancelar" action="#{bibliografiacontroller.cancel()}" immediate="true"></p:commandButton>                                
+                            </h:panelGroup>                                    
+                        </f:facet>                        
+                    </p:panelGrid>
+                </div>
+            </div>                       
+            </h:form>
+        </f:view>
+    </h:body>
+</html>

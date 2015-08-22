@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                        
+        <title>SIGEBI - Formulario de Creacion de Clientes</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form style="formulario">
+            <div class="contenedor">
+                <div class="centrado"> 
+                     <p:focus for="codcli">                             
+                    <p:panelGrid columns="2">
+                    <f:facet name="header">Formulario para Creacion de Clientes</f:facet>        
+                        <h:outputLabel value="Codigo:" for="codcli" />
+                        <p:inputText id="codcli" value="#{clientecontroller.e.codcli}" style="text-transform: uppercase" title="Codigo de Cliente" required="true" requiredMessage="Codigo de Cliente"/>          
+                        <h:outputLabel value="Nombre:" for="nomcli" />
+                        <p:inputText id="nomcli" value="#{clientecontroller.e.nomcli}" style="text-transform: uppercase" title="Nombre de Cliente" required="true" requiredMessage="Nombre de Cliente"/>
+                        <h:outputLabel value="Apellido:" for="apecli" />
+                        <p:inputText id="apecli" value="#{clientecontroller.e.apecli}" style="text-transform: uppercase" title="Apellido Cliente" required="true" requiredMessage="Apellido Cliente"/>
+                        <h:outputLabel value="Carnet:" for="carcli" />
+                        <p:inputText id="carcli" value="#{clientecontroller.e.carcli}" style="text-transform: uppercase" title="Carnet Cliente" required="false" requiredMessage="Carnet Cliente"/>
+                        <h:outputLabel value="Categoria:" for="catcli" />
+                        <p:inputText id="catcli" value="#{clientecontroller.e.catcli}" style="text-transform: uppercase" title="Categoria Cliente" required="false" requiredMessage="Categoria Cliente"/>
+                        <h:outputLabel value="Clave:" for="clacli" />
+                        <p:inputText id="clacli" value="#{clientecontroller.e.clacli}" style="text-transform: uppercase" title="Clase Cliente" required="false" requiredMessage="Clase Cliente"/>
+                        <h:outputLabel value="Cuenta:" for="cuecli" />
+                        <p:inputText id="cuecli" value="#{clientecontroller.e.cuecli}" style="text-transform: uppercase" title="Cuenta Cliente" required="false" requiredMessage="Cuenta Cliente"/>                        
+                        <h:outputLabel value="Fecha:" for="feccli" />
+                        <p:calendar id="feccli" value="#{clientecontroller.e.feccli}" showOn="button" style="text-transform: uppercase" title="Fecha Cliente" required="false" requiredMessage="Fecha Cliente"/>
+                        <f:facet name="footer">
+                            <h:panelGroup style="display: block; text-align: center">                        
+                                <p:commandButton value="Guardar" action="#{clientecontroller.add()}"></p:commandButton>
+                                <p:commandButton value="Cancelar" action="#{clientecontroller.cancel()}" immediate="true"></p:commandButton>                                
+                            </h:panelGroup>                                    
+                        </f:facet>                        
+                    </p:panelGrid>
+                    </p:focus>
+                </div>
+            </div>                       
+            </h:form>
+        </f:view>
+    </h:body>
+</html>

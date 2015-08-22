@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">      
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                            
+        <title>Actualizacion de Informacion de Solicitud de Compra de Libros</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form style="formulario">
+            <div class="contenedor">
+                <div class="centrado">                             
+                    <p:focus for="titsol" />                                                                                                                                   
+                    <p:panelGrid columns="2">
+                    <f:facet name="header">Actualizacion de Informacion de Solicitud de Compra de Libros</f:facet>                        
+                        <h:outputLabel value="Titulo:" for="titsol" />
+                        <p:inputText id="titsol" value="#{solicompbibliocontroller.e.titsol}" style="text-transform: uppercase" title="Titulo" required="true" requiredMessage="Titulo"/>                        
+                        <h:outputLabel value="Descripcion de Solicitud:" for="dessol" />
+                        <p:inputText id="dessol" value="#{solicompbibliocontroller.e.dessol}" style="text-transform: uppercase" title="Descripcion de Solicitud" required="true" requiredMessage="Descripcion de Solicitud"/>
+                        <h:outputLabel value="Documentalista:" for="metasol" />
+                        <p:inputText id="metasol" value="#{solicompbibliocontroller.e.metasol}" style="text-transform: uppercase" title="Documentalista" required="false" requiredMessage="Nombre de Documentalista"/>                        
+                        <h:outputLabel value="Fecha de Solicitud:" for="fecsol" />
+                        <p:calendar id="fecsol" value="#{solicompbibliocontroller.e.fecsol}" pattern="dd-MM-yyyy" mask="true" />                       
+                        <h:outputLabel value="Costo Bibliografia:" for="cossol" />
+                        <p:inputText id="cossol" value="#{solicompbibliocontroller.e.cossol}" style="text-transform: uppercase" title="Costo de Bibliografia" required="true" requiredMessage="Costo de Bibliofrafia"/>                        
+                        <h:outputLabel value="Web de Bibliografia:" for="urlsol" />
+                        <p:inputText id="urlsol" value="#{solicompbibliocontroller.e.urlsol}" style="text-transform: uppercase" title="Sitio Web de Bibliografia" required="false" requiredMessage="Sitio Web de BIbliografia"/>                                           
+                        
+                        <f:facet name="footer">
+                            <h:panelGroup style="display: block; text-align: center">                        
+                                <p:commandButton value="Guardar" action="#{solicompbibliocontroller.edit()}"></p:commandButton>
+                                <p:commandButton value="Cancelar" action="#{solicompbibliocontroller.cancel()}" immediate="true"></p:commandButton>                                
+                            </h:panelGroup>                                    
+                        </f:facet>                        
+                    </p:panelGrid>
+                </div>
+            </div>                       
+            </h:form>
+        </f:view>
+    </h:body>        
+</html>

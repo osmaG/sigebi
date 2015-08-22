@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>SIGEBI, Menu Administracion</title>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                   
+    </h:head>
+    <h:body>
+            <h:form style="formulario">           
+            <h:graphicImage value="images/user.png" alt="Cuenta de Usuario" width="40" height="40" title="Cuenta de Usuario"/>
+            <h:outputLabel value="#{Usuario.getCueusu}" />&nbsp;
+            <h:graphicImage value="images/roll.png" alt="Rol Activo" title="Rol Activo" width="40" height="40"/>
+            <h:outputLabel value="#{Usuario.getNivusu}" />&nbsp; 
+            <h:outputLink value="escritorio.xhtml" title="Ir al Escritorio">
+                <h:graphicImage value="images/home.png" alt="Escritorio" title="Escritorio" width="40" height="40"/>
+            </h:outputLink>&nbsp;      
+            <div class="contenedor">
+                <div class="centrado">           
+            <h:panelGrid styleClass="tablas" columns="2">
+                <h:outputLink value="versolicompbiblio.xhtml">
+                <h:graphicImage value="images/compras.png" alt="Compra de libros" title="Compra de libros" width="200" height="200" style="border:5px solid green"/>
+                </h:outputLink>
+                <h:outputLink value="versugerencia.xhtml">               
+                <h:graphicImage value="images/sugerencias.png" alt="Sugerencias" title="Sugerencias" width="200" height="200" style="border:5px solid green" />
+                </h:outputLink>               
+                <h:outputLabel value="Compra de libros"/>
+                <h:outputLabel styleClass="tituloOpciones" value="Sugerencias"/>                               
+                <h:outputLink value="verbitacora.xhtml">                               
+                <h:graphicImage value="images/bitacora.png" alt="Bitacora" title="Bitacora" width="200" height="200" style="border:5px solid green"/>               
+                </h:outputLink>              
+                <h:outputLink value="verbasecono.xhtml">                               
+                <h:graphicImage value="images/conocimiento.png" alt="Base conocimiento" title="Base conociemiento" width="200" height="200" style="border:5px solid green"/>               
+                </h:outputLink>                              
+                <h:outputLabel styleClass="tituloOpciones" value="Bitacora" />
+                <h:outputLabel styleClass="tituloOpciones" value="Base Conocimiento" />               
+            </h:panelGrid>
+                </div>
+            </div>
+            </h:form>           
+    </h:body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">      
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="sigebi.css"></link>                            
+        <title>Actualizacion de Informacion de Catalogo de Bibliografia</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form style="formulario">
+            <div class="contenedor">
+                <div class="centrado">                             
+                    <p:focus for="nomcbi" />                                                                                                                                   
+                    <p:panelGrid columns="2">
+                    <f:facet name="header">Actualizacion de Informacion de Catalogo de Bibliografia</f:facet>                        
+                        <h:outputLabel value="Nombre:" for="nomcbi" />
+                        <p:inputText id="nomcbi" value="#{catbibliografiacontroller.e.nomcbi}" style="text-transform: uppercase" title="Nombre" required="true" requiredMessage="Nombre"/>                        
+                        <h:outputLabel value="Descripcion:" for="descbi" />
+                        <p:inputText id="descbi" value="#{catbibliografiacontroller.e.descbi}" style="text-transform: uppercase" title="Descripcion" required="true" requiredMessage="Descripcion"/>   
+                        <f:facet name="footer">
+                            <h:panelGroup style="display: block; text-align: center">                        
+                                <p:commandButton value="Guardar" action="#{catbibliografiacontroller.edit()}"></p:commandButton>
+                                <p:commandButton value="Cancelar" action="#{catbibliografiacontroller.cancel()}" immediate="true"></p:commandButton>                                
+                            </h:panelGroup>                                    
+                        </f:facet>                        
+                    </p:panelGrid>
+                </div>
+            </div>                       
+            </h:form>
+        </f:view>
+    </h:body>        
+</html>
